@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupAPI", "MeetupAPI\MeetupAPI.csproj", "{9FDD304F-6310-475B-B483-21FFE97B2692}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{891BE4CB-ACE8-42EC-BBEA-973C4B6BF2AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{5DDB4D9B-BE48-46C8-B883-84E275BB99E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{2DFBB680-166B-4B4B-BCAD-45FF73D12BCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupAPI.Domain", "MeetupAPI.Domain\MeetupAPI.Domain.csproj", "{314C7CDE-00CD-41FC-B988-1B621647B9EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupAPI.DAL", "MeetupAPI.DAL\MeetupAPI.DAL.csproj", "{A817C818-FFC1-44F9-A9F1-69F80FC3D15A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupAPI.BLL", "MeetupAPI.BLL\MeetupAPI.BLL.csproj", "{EF6030D2-C96D-4AD4-BE96-B744958906AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FDD304F-6310-475B-B483-21FFE97B2692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDD304F-6310-475B-B483-21FFE97B2692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDD304F-6310-475B-B483-21FFE97B2692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDD304F-6310-475B-B483-21FFE97B2692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{314C7CDE-00CD-41FC-B988-1B621647B9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{314C7CDE-00CD-41FC-B988-1B621647B9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{314C7CDE-00CD-41FC-B988-1B621647B9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{314C7CDE-00CD-41FC-B988-1B621647B9EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A817C818-FFC1-44F9-A9F1-69F80FC3D15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A817C818-FFC1-44F9-A9F1-69F80FC3D15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A817C818-FFC1-44F9-A9F1-69F80FC3D15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A817C818-FFC1-44F9-A9F1-69F80FC3D15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6030D2-C96D-4AD4-BE96-B744958906AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6030D2-C96D-4AD4-BE96-B744958906AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6030D2-C96D-4AD4-BE96-B744958906AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6030D2-C96D-4AD4-BE96-B744958906AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{314C7CDE-00CD-41FC-B988-1B621647B9EB} = {2DFBB680-166B-4B4B-BCAD-45FF73D12BCB}
+		{A817C818-FFC1-44F9-A9F1-69F80FC3D15A} = {891BE4CB-ACE8-42EC-BBEA-973C4B6BF2AB}
+		{EF6030D2-C96D-4AD4-BE96-B744958906AE} = {5DDB4D9B-BE48-46C8-B883-84E275BB99E0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BF36947-5BFB-4A9C-9376-46A99A633653}
+	EndGlobalSection
+EndGlobal
