@@ -15,12 +15,8 @@ namespace MeetupAPI.Domain.Entity
         public DateTime MeetupDate { get; set; }
         public string MeetupLocation { get; set; }
         public int OrganizerId { get; set; }
-
-        [ForeignKey("OrganazerId")]
-        public User Organizer { get; set; }
+        public virtual User Organizer { get; set; }
         public int SpeakerId { get; set; }
-
-        [ForeignKey("SpeakerId")]
-        public User Speaker { get; set; }
+        public virtual User Speaker { get; set; }
     }
 }

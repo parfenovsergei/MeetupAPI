@@ -14,11 +14,8 @@ namespace MeetupAPI.Domain.Entity
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Password { get; set; }
-
-        [ForeignKey("OrganazerId")]
+        public string Role { get; set; }
         public virtual List<Meetup> OrganizedMeetups { get; set; } = new List<Meetup>();
-
-        [ForeignKey("SpeakerId")]
         public virtual List<Meetup> SpeakerMeetups { get; set; } = new List<Meetup>();
     }
 }
