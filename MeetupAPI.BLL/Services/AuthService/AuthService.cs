@@ -29,6 +29,10 @@ namespace MeetupAPI.BLL.Services.AuthService
         {
             try
             {
+                var checkUser = await _userRepository.GetAll().FirstOrDefaultAsync(u => u.Email == user.Email);
+                if (checkUser != null)
+                    return "Пользователь с таким email уже существует.";
+
                 User newUser = new User
                 {
                     Email = user.Email,
@@ -37,6 +41,7 @@ namespace MeetupAPI.BLL.Services.AuthService
                     Password = HashPasswordHelper.HashPassowrd(user.Password),
                     Role = "User"
                 };
+
                 await _userRepository.Create(newUser);
 
                 return "Регистрация прошла успешно";
@@ -72,7 +77,7 @@ namespace MeetupAPI.BLL.Services.AuthService
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.Email),
                 new Claim(ClaimTypes.Role, user.Role)
             };
 

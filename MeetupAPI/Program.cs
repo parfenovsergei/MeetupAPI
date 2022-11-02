@@ -1,4 +1,5 @@
 using MeetupAPI.BLL.Services.AuthService;
+using MeetupAPI.BLL.Services.MeetupService;
 using MeetupAPI.DAL;
 using MeetupAPI.DAL.Interfaces;
 using MeetupAPI.DAL.Repositories;
@@ -20,11 +21,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<IBaseRepository<User>, UserRepository>();
 builder.Services.AddScoped<IBaseRepository<Meetup>, MeetupRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IMeetupService, MeetupService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => {
-        options.RequireHttpsMetadata = false;
-        options.SaveToken = true;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
