@@ -46,6 +46,11 @@ namespace MeetupAPI.BLL.Services.MeetupService
             }
         }
 
+        public Task<string> DeleteMeetup(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<Meetup>> GetAll()
         {
             try
@@ -69,6 +74,30 @@ namespace MeetupAPI.BLL.Services.MeetupService
             catch (Exception)
             {
                 throw new Exception("Ошибка получения данных.");
+            }
+        }
+
+        public async Task<Meetup> UpdateMeetup(int id, Meetup updatedMeetup, string newSpeaker)
+        {
+            try
+            {
+                var meetup = await _meetupRepository.GetAll().FirstOrDefaultAsync(m => m.MeetupId == id);
+                var speaker = await _userRepository.GetAll().FirstOrDefaultAsync(u => u.Email == newSpeaker);
+
+                if (meetup == null || speaker == null)
+                    throw new ArgumentNullException("Meetup or speaker are not exists");
+
+                meetup.MeetupName = updatedMeetup.MeetupName;
+                meetup.Description = updatedMeetup.Description;
+                meetup.MeetupDate = updatedMeetup.MeetupDate;
+                meetup.MeetupLocation = updatedMeetup.MeetupLocation;
+                meetup.Speaker = speaker;
+
+                return await _meetupRepository.Update(meetup);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ошибка обновления данных");
             }
         }
     }

@@ -12,5 +12,7 @@ namespace MeetupAPI.BLL.Services.MeetupService
         Task<List<Meetup>> GetAll();
         Task<string> AddMeetup(Meetup meetup, string speakerEmail, string organizerEmail);
         Task<Meetup> GetMeetup(int id);
+        Task<Meetup> UpdateMeetup(int id, Meetup updatedMeetup, string newSpeaker);
+        Task<string> DeleteMeetup(int id);
     }
 }
