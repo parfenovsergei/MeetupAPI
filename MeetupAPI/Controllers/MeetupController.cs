@@ -18,7 +18,7 @@ namespace MeetupAPI.Controllers
             _meetupService = meetupService;
         }
 
-        [HttpGet("GetMyMeetups")]
+        [HttpGet("GetAllMeetups")]
         [Authorize]
         public async Task<List<ReadMeetupViewModel>> GetMeetups()
         {
@@ -92,6 +92,13 @@ namespace MeetupAPI.Controllers
             ReadMeetupViewModel readMeetup = mapper2.Map<Meetup, ReadMeetupViewModel>(updatedMeetup);
 
             return readMeetup;
+        }
+
+        [HttpDelete("DeleteMeetup/{id}")]
+        public async Task<string> DeleteMeetup(int id)
+        {
+            var response = await _meetupService.DeleteMeetup(id);
+            return response;
         }
     }
 }

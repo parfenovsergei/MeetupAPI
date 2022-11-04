@@ -46,9 +46,20 @@ namespace MeetupAPI.BLL.Services.MeetupService
             }
         }
 
-        public Task<string> DeleteMeetup(int id)
+        public async Task<string> DeleteMeetup(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var meetup = await _meetupRepository.GetAll().FirstOrDefaultAsync(m => m.MeetupId == id);
+                if (meetup == null)
+                    return "События с таким id не существует.";
+                await _meetupRepository.Delete(meetup);
+                return $"Событие с id {id} удалено.";
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ошибка удаления события.");
+            }
         }
 
         public async Task<List<Meetup>> GetAll()
