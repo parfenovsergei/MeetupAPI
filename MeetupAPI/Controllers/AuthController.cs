@@ -2,11 +2,7 @@
 using MeetupAPI.BLL.Services.AuthService;
 using MeetupAPI.Domain.Entity;
 using MeetupAPI.ViewModels.UserViewModel;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
-using System;
 
 namespace MeetupAPI.Controllers
 {

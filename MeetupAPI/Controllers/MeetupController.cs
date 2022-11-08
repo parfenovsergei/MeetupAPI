@@ -3,7 +3,6 @@ using MeetupAPI.BLL.Services.MeetupService;
 using MeetupAPI.Domain.Entity;
 using MeetupAPI.ViewModels.MeetupViewModel;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetupAPI.Controllers
@@ -92,11 +91,11 @@ namespace MeetupAPI.Controllers
 
                 var updatedMeetup = await _meetupService.UpdateMeetup(id, meetup, request.SpeakerEmail);
 
-                var config2 = new MapperConfiguration(cfg => cfg.CreateMap<Meetup, ReadMeetupViewModel>()
+                var configRead = new MapperConfiguration(cfg => cfg.CreateMap<Meetup, ReadMeetupViewModel>()
                     .ForMember("OrganizerEmail", opt => opt.MapFrom(c => c.Organizer.Email))
                     .ForMember("SpeakerEmail", opt => opt.MapFrom(c => c.Speaker.Email)));
-                var mapper2 = new Mapper(config2);
-                ReadMeetupViewModel readMeetup = mapper2.Map<Meetup, ReadMeetupViewModel>(updatedMeetup);
+                var mapperRead = new Mapper(configRead);
+                ReadMeetupViewModel readMeetup = mapperRead.Map<Meetup, ReadMeetupViewModel>(updatedMeetup);
 
                 return readMeetup;
             }

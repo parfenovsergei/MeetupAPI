@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MeetupAPI.Domain.Entity
+﻿namespace MeetupAPI.Domain.Entity
 {
     public class User
     {
